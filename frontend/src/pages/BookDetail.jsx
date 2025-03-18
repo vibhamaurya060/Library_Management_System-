@@ -8,7 +8,7 @@ const BookDetail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/book/${id}`)
+    fetch(`https://library-management-system-szpz.onrender.com/book/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setBook(data);

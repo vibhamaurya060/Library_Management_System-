@@ -1,10 +1,11 @@
 
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../assets/bookLogo.png";
 
 const Navbar = ({ isAuthenticated, setIsAuthenticated }) => {
 
     const navigate = useNavigate();
-    
+
     const handleLogout = async () => {
         const token = localStorage.getItem("token");
         try {
@@ -25,19 +26,17 @@ const Navbar = ({ isAuthenticated, setIsAuthenticated }) => {
 
     return (
         <nav className="bg-gray-600 p-4 text-white flex justify-between items-center">
-            <h1 className="text-xl font-bold">Book App</h1>
-            <div className="flex space-x-4">
+            <img src={logo} alt="Book Cover" style={{ width: "50px", height: "4vh", marginLeft:"40px" }} className=" rounded-md " />
+            <div className="flex space-x-10 mx-10 text-lg font-semibold" >
                 <Link to="/" className="hover:underline">Home</Link>
                 {!isAuthenticated ? (
                     <>
                         <Link to="/login" className="hover:underline">Login</Link>
-                        
                     </>
                 ) : (
-
                     <>
-                        <Link to="/book" className="hover:underline">Add Book</Link>
-                        <button onClick={handleLogout} className="bg-red-500 px-3 py-1 rounded" >Logout</button>
+                        <Link to="/addbook" className="hover:underline">Add Book</Link>
+                        <button onClick={handleLogout} className="bg-white text-black px-3 py-1 rounded" >Logout</button>
                     </>
                 )}
             </div>

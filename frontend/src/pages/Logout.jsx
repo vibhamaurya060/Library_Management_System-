@@ -1,6 +1,6 @@
 import React from 'react'
 
-const API_URL="http://localhost:8080";
+const API_URL="https://library-management-system-szpz.onrender.com";
 
 const Logout=({ setIsLoggedIn, token, setToken })=> {
     const handleLogout = async () => {

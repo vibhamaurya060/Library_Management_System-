@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-const API_URL="http://localhost:8080";
+const API_URL="https://library-management-system-szpz.onrender.com";
 
 const Login = ({ setIsAuthenticated }) => {
     const [username, setUsername] = useState("");
